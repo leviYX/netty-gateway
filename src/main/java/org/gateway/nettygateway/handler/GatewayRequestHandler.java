@@ -39,8 +39,7 @@ public final class GatewayRequestHandler extends SimpleChannelInboundHandler<Ful
         // 如果 HTTP 解码失败，直接返回 400。
         DecoderResult decoderResult = request.decoderResult();
         if (!decoderResult.isSuccess()) {
-            writeResponse(ctx, request, HttpResponseStatus.BAD_REQUEST, "text/plain; charset=UTF-8",
-                    "Bad request");
+            writeResponse(ctx, request, HttpResponseStatus.BAD_REQUEST, "text/plain; charset=UTF-8", "Bad request");
             return;
         }
 
